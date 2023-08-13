@@ -5,15 +5,12 @@ import { Category } from './../models/category.model';
 import { environment } from './../../environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CategoriesService {
+  private apiUrl = `${environment.API_URL}/api/v1/categories`;
 
-  private apiUrl = `${environment.API_URL}/api/categories`;
-
-  constructor(
-    private http: HttpClient
-  ) { }
+  constructor(private http: HttpClient) {}
 
   getAll(limit?: number, offset?: number) {
     let params = new HttpParams();

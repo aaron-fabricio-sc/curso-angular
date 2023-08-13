@@ -3,5 +3,5 @@
 <p>{{ product.title }}</p>
 <p class="category">{{ product.category.name }}</p>
 <p>{{ product.description }}</p>
-<button (click)="onShowDetail()">Ver detalle</button>
+<a [routerLink]="['/product', product.id]">Ver detalle</a>
 <button (click)="onAddToCart()">Add cart</button>
